@@ -1,5 +1,8 @@
 package com.dataprocessor.reader;
+
 import com.dataprocessor.model.Student;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,23 +11,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentReader {
+
+    private static final Logger logger =
+            LoggerFactory.getLogger(StudentReader.class);
+
     public List<Student> readStudents(String filePath) throws IOException {
+        logger.info("Reading student data from: {}", filePath);
+
         List<Student> students = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br =
+                     new BufferedReader(new FileReader(filePath))) {
             String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                String name = parts[0];
-                int age = Integer.parseInt(parts[1]);
-                String grade = parts[2];
+            int lineNumber = 0;
+
+            while ((line = br.readLine()) != null) {
+                lineNumber++;
+                String[] data = line.split(",");
+
+                if (data.length < 3) {
+                    logger.warn("Skipping malformed line {}: {}",
+                            lineNumber, line);
+                    continue;
+                }
+
+                String name  = data[0].trim();
+                int    age   = Integer.parseInt(data[1].trim());
+                String grade = data[2].trim();
+
                 students.add(new Student(name, age, grade));
             }
         }
 
+        logger.info("Successfully loaded {} students", students.size());
         return students;
-    }}
-
+    }
+}
 /*Code Review — StudentReader.java
 Naming — readStudents, filePath, students — all clear and meaningful. 9/10
 Structure — create list → read file → loop → create object → add to list → return. Correct flow. 10/10
