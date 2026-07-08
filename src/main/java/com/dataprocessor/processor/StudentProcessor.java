@@ -7,10 +7,10 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Studentprocessor {
+public class StudentProcessor {
 
     private static final Logger logger =
-            LoggerFactory.getLogger(Studentprocessor.class);
+            LoggerFactory.getLogger(StudentProcessor.class);
 
     public List<Student> filterByGrade(List<Student> students, String grade) {
         logger.info("Filtering students by grade: {}", grade);

@@ -1,14 +1,15 @@
-2026-07-03 23:48:23 [INFO ] com.dataprocessor.Main - DataProcessor application starting
-2026-07-03 23:48:23 [INFO ] c.dataprocessor.reader.StudentReader - Reading student data from: src/main/resources/students.csv
-2026-07-03 23:48:23 [INFO ] c.dataprocessor.reader.StudentReader - Successfully loaded 4 students
-2026-07-03 23:48:23 [INFO ] c.d.processor.Studentprocessor - Filtering students by grade: A
-2026-07-03 23:48:23 [INFO ] c.d.processor.Studentprocessor - Found 2 students with grade: A
-2026-07-03 23:48:23 [INFO ] com.dataprocessor.Main - Grade A student: Student{name='John', age=20, grade='A'}
-2026-07-03 23:48:23 [INFO ] com.dataprocessor.Main - Grade A student: Student{name='Mike', age=19, grade='A'}
-2026-07-03 23:48:23 [INFO ] c.d.processor.Studentprocessor - Finding oldest student from 4 records
-2026-07-03 23:48:23 [INFO ] c.d.processor.Studentprocessor - Oldest student: Sarah age 22
-2026-07-03 23:48:23 [INFO ] com.dataprocessor.Main - Oldest student: Student{name='Sarah', age=22, grade='B'}
-2026-07-03 23:48:23 [INFO ] c.d.processor.Studentprocessor - Calculating average age for 4 students
-2026-07-03 23:48:23 [INFO ] c.d.processor.Studentprocessor - Average age: 20.5
-2026-07-03 23:48:23 [INFO ] com.dataprocessor.Main - Average age: 20.5
-2026-07-03 23:48:23 [INFO ] com.dataprocessor.Main - DataProcessor application completed
+2026-07-08 14:52:22 [INFO ] com.dataprocessor.Main - DataProcessor application starting
+2026-07-08 14:52:22 [INFO ] c.dataprocessor.util.ConfigManager - Configuration loaded successfully from: config.properties
+2026-07-08 14:52:22 [INFO ] c.dataprocessor.reader.StudentReader - Reading student data from: src/main/resources/students.csv
+2026-07-08 14:52:22 [INFO ] c.dataprocessor.reader.StudentReader - Successfully loaded 4 students
+2026-07-08 14:52:22 [INFO ] c.d.processor.Studentprocessor - Filtering students by grade: A
+2026-07-08 14:52:22 [INFO ] c.d.processor.Studentprocessor - Found 2 students with grade: A
+2026-07-08 14:52:22 [INFO ] com.dataprocessor.Main - Grade A student: Student{name='John', age=20, grade='A'}
+2026-07-08 14:52:22 [INFO ] com.dataprocessor.Main - Grade A student: Student{name='Mike', age=19, grade='A'}
+2026-07-08 14:52:22 [INFO ] c.d.processor.Studentprocessor - Finding oldest student from 4 records
+2026-07-08 14:52:22 [INFO ] c.d.processor.Studentprocessor - Oldest student: Sarah age 22
+2026-07-08 14:52:22 [INFO ] com.dataprocessor.Main - Oldest student: Student{name='Sarah', age=22, grade='B'}
+2026-07-08 14:52:22 [INFO ] c.d.processor.Studentprocessor - Calculating average age for 4 students
+2026-07-08 14:52:22 [INFO ] c.d.processor.Studentprocessor - Average age: 20.5
+2026-07-08 14:52:22 [INFO ] com.dataprocessor.Main - Average age: 20.5
+2026-07-08 14:52:22 [INFO ] com.dataprocessor.Main - DataProcessor application completed

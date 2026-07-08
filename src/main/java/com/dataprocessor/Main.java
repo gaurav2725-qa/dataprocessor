@@ -1,7 +1,7 @@
 package com.dataprocessor;
 
 import com.dataprocessor.model.Student;
-import com.dataprocessor.processor.Studentprocessor;
+import com.dataprocessor.processor.StudentProcessor;
 import com.dataprocessor.reader.StudentReader;
 import com.dataprocessor.util.ConfigManager;
 import org.slf4j.Logger;
@@ -26,7 +26,7 @@ public class Main {
             StudentReader reader = new StudentReader();
             List<Student> students = reader.readStudents(dataPath);
 
-            Studentprocessor processor = new Studentprocessor();
+            StudentProcessor processor = new StudentProcessor();
 
             List<Student> gradeA = processor.filterByGrade(students, "A");
             gradeA.forEach(s -> logger.info("Grade A student: {}", s));
