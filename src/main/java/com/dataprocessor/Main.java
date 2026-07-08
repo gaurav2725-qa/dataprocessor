@@ -3,6 +3,7 @@ package com.dataprocessor;
 import com.dataprocessor.model.Student;
 import com.dataprocessor.processor.Studentprocessor;
 import com.dataprocessor.reader.StudentReader;
+import com.dataprocessor.util.ConfigManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,15 +15,16 @@ public class Main {
     private static final Logger logger =
             LoggerFactory.getLogger(Main.class);
 
-    private static final String TEST_DATA_PATH =
-            "src/main/resources/students.csv";
-
     public static void main(String[] args) {
         logger.info("DataProcessor application starting");
 
         try {
+            // Config drives everything — no hardcoded values
+            String dataPath = ConfigManager.getInstance()
+                    .get("data.students.path");
+
             StudentReader reader = new StudentReader();
-            List<Student> students = reader.readStudents(TEST_DATA_PATH);
+            List<Student> students = reader.readStudents(dataPath);
 
             Studentprocessor processor = new Studentprocessor();
 
